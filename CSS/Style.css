@@ -1,0 +1,520 @@
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; /** Esto es para ajustar los rem a una mejor proporcion. Rems - 62.5% = 10px de 16px **/
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+
+/** Globales **/
+
+img{
+    max-width: 100%;
+}
+
+
+
+.contenedor{
+    width: 95%; /** Responsive: Da un margen cuando el dispositivo es pequeño **/
+    max-width: 120rem; /**Igual a 1200 px**/
+    margin-right: auto;
+    margin-left: auto;
+}
+
+h1{
+font-size: 3rem;
+}
+@media (min-width: 768px) {
+    h1 {
+        font-size: 3.8rem;
+    }
+}
+h2{
+font-size: 3.4rem;
+}
+
+h3{
+font-size: 3rem;
+}
+
+h4 {
+    font-size: 2.8rem;
+}
+
+
+
+/** UTILIDADES (son clases utilizables para no tener que repetir**/
+
+.space-between {
+    justify-content: space-between;
+}
+
+.seccion {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.fw-300 {
+    font-weight: 300;
+    
+}
+
+.letra-grande {
+    font-size: 4.2rem;
+}
+
+.centrar-texto {
+    text-align: center;
+}
+
+.d-block {
+    display: block!important;
+
+}
+
+.contenido-centrado {
+    max-width: 80rem;
+}
+
+/** BOTONES **/
+
+.boton {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    display: block;/** Responsive: para que tome todo el espacio disponible **/
+    flex: 0 0 100%; /** Responsive: tamaño de crecimiento **/
+}
+
+@media (min-width: 768px) {
+    .boton {
+        display: inline-block;
+        flex: 0 0 auto;
+    }
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+
+.boton-amarillo {
+    background-color: #E08709;
+}
+
+.boton-verde {
+    background-color: #71B100 ;
+}
+
+/* Header*/
+.site-header {
+    background-color: #333333;
+    padding: 1rem 0rem 3rem 0rem;
+}
+
+.site-header.inicio {
+    background: url(../img/header.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 100vh;
+    min-height: 60rem;    
+}
+
+.contenido-header {
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center; /**Responsive: Centra el contenido del header **/
+
+}
+
+
+@media (min-width: 768px) {
+    .contenido-header {
+        text-align: left;
+    }
+}
+
+
+.contenido-header h1{
+    color: white;
+    padding-bottom: 2rem;
+    max-width: 70rem;
+    line-height: 2;
+}
+
+.barra {
+    padding-top: 3rem;
+}
+
+
+@media (min-width: 768px) { /** Hace que la barra se centre debajo del logo**/
+    .barra {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+
+
+
+/* Navegacion*/
+.navegacion a{
+    color: white;
+    text-decoration: none;
+    font-size: 2.2rem; /**1.8 rem son igual a 18 px**/
+    display: block; /**Responsive: los objetos de navegacion se situan uno debjao del otro **/
+}
+
+@media (min-width: 768px) {
+    .navegacion a { /** Hay que ser especificos y poner tanto la clase como el "a",sino, no coge el efecto **/
+        display: inline-block;
+        font-size: 1.8rem;
+        margin-right: 2rem;
+    }
+    .navegacion a:last-of-type{
+        margin: 0;
+    }
+}
+
+
+
+.navegacion a:hover{
+    color: sienna;
+}
+
+/** Mobile Menu: Crea un menu desplegable, pero rudimentario, se hacen es con java script**/ 
+
+.mobile-menu img {
+    width: 5rem;
+}
+
+@media (min-width: 768px) {
+    .mobile-menu{
+        display: none;
+    }
+}
+.navegacion:target {
+    display: block;
+}
+
+.navegacion {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .navegacion {
+        display: block;
+    }
+}
+
+
+/** Iconos nosotros**/
+
+@media (min-width: 768px) {
+    .iconos-nosotros{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.icono {
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .icono {
+        flex-basis: calc(33.3% - 1rem);
+    }
+}
+.icono h3{
+    text-transform: uppercase;
+}
+
+/** ANUNCIOS **/
+
+
+
+@media (min-width: 768px) {
+    .contenedor-anuncios {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+    }
+}
+.anuncio {
+    border: 1px solid #b5b5b5;
+    background-color: #f5f5f5;
+    margin-bottom: 2rem;  
+}
+@media (min-width: 768px ) {
+    .anuncio {
+        flex: 0 0 calc(33.3% - 1rem);
+    }
+}
+.contenido-anuncio {
+    padding: 2rem;
+}
+.contenido-anuncio h3, 
+.contenido-anuncio p {
+    margin: 0;
+}
+.precio {
+    color: #71B100;
+    font-weight: 700;
+}
+.iconos-caracteristicas {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 50rem;
+    flex: 1;
+}
+.iconos-caracteristicas li {
+    display: flex;
+}
+.iconos-caracteristicas li img {
+    margin-right: 2rem;
+}
+
+.ver-todas {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/** Contacto Home**/
+.imagen-contacto {
+background-image: url(../img/encuentra.jpg);
+background-position: center center;
+background-size: cover;
+height: 40rem;
+display: flex;
+align-items: center;
+
+}
+.contenido-contacto {
+    flex: 0 0 95%; /** Responsive: Da un margen cuando el dispositivo es pequeño **/
+    color: white;
+    text-align: center;
+    
+}
+
+@media (min-width: 768px) {
+    .contenido-contacto {
+        text-align: left;
+    }
+}
+
+
+.contenido-contacto p {
+    font-size: 1.8rem;
+}
+
+
+/** SECCION INFERIOR **/
+@media (min-width: 768px) {
+    .seccion-inferior{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 3rem;
+    }
+    .seccion-inferior .blog {
+    flex-basis: 60%;
+    }
+    .seccion-inferior .testimoniales {
+    flex-basis: calc(40% - 2rem);
+    }
+}
+
+.entrada-blog {
+    
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .entrada-blog {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.entrada-blog:last-of-type {
+    margin-bottom: 0;
+}
+.entrada-blog .imagen {
+    flex-basis: 40%;
+}
+.entrada-blog .texto-entrada {
+    flex-basis: calc(60% - 3rem);
+}
+.texto-entrada a {
+    color: black;
+    text-decoration: none;
+}
+.texto-entrada h4{
+    margin: 0;
+    line-height: 1.2;
+}
+.texto-entrada h4::after {
+    content: '';
+    display: block;
+    width: 15rem;
+    height: .5rem;
+    background-color: #71B100;
+    margin-top: 1rem;
+}
+.texto-entrada span {
+    color: rgb(245, 149, 14);
+}
+
+/**TESTIMONIALES **/
+.testimonial {
+    background-color: #71B100;
+    font-size: 2.4rem;
+    padding: 2rem;
+    color: white;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+}
+.testimonial p {
+    text-align: right;
+}
+.testimonial blockquote::before {
+    content: '';
+    background-image: url(../img/comilla.svg);
+    width: 4rem;
+    height: 4rem;
+    position: absolute;
+    left: -2rem;
+}
+
+.testimonial blockquote {
+    position: relative;
+    padding-left: 5rem;
+    font-weight: 300;
+}
+
+/** FOOTER **/
+
+.site-footer {
+    background-color: #333333;
+    margin: 0;
+    
+}
+.contenedor-footer {
+    padding: 3rem 0;
+    text-align: center;
+    
+}
+@media (min-width: 768px) {
+    .contenedor-footer {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+/** Para ocultar el footer cuando sea menos de 768px**/
+
+.site-footer nav {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .site-footer nav {
+        display: block;
+    }
+}
+
+.copyright {
+    margin: 0;
+    color: white;
+}
+
+
+/** Estilos para paginas internas **/
+
+/* Nosotros */
+
+
+@media (min-width: 768px) {
+    .contenido-nosotros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 2rem;
+    }
+}
+
+
+
+.texto-nosotros blockquote {
+    font-size: 2rem;
+    font-weight: 900;
+    margin: 0;
+    padding: 1 0 3 0;
+}
+
+/** Anuncio**/
+.resumen-propiedad {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/** Pagina de contacto **/
+
+.contacto p {
+    font-size: 1.4rem;
+    color: #0a0a0a;
+}
+
+legend {
+    font-size: 2.4rem;
+    color: #474747;
+}
+
+label {
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block; /** Para que los formularios tomen la pantalla entera y no se junten entre sí **/
+}
+
+input:not([type ="submit"]),
+textarea,
+select{
+    padding: 1rem;
+    display: block;
+    width: 100%;
+    background-color: #e1e1e1;
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: 1rem;
+}
+
+input[type="radio"] {
+    width: auto;
+    margin: 0;
+}
+
+textarea {
+    height: 20rem;
+}
+.forma-contacto {
+    max-width: 30rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
